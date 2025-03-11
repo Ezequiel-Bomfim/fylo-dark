@@ -1,0 +1,8 @@
+:root{
+    --primary-font-size: 2rem;
+    --secundary-font-size: 1.5rem;
+    --primary-color: #00d4ff;
+    --text-color: #fff;
+    --primary-font: Raleway, sans-serif;
+    --transition-default: ease-in-out 0.3s;
+}

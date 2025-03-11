@@ -1,0 +1,13 @@
+.intro .info button, 
+.get-access .form button{
+   width: 200px;
+   height: 40px;
+   border-radius: 50px;
+   border: none;
+
+   background-color: var(--primary-color);
+   color: var(--text-color);
+   font-family: var(--primary-font);
+   cursor: pointer;
+   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}

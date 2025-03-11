@@ -1,0 +1,147 @@
+@import url(../css/reset.css);
+@import url(../css/variables.css);
+@import url(../css/typography.css);
+@import url(../css/components.css);
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(../css/animations.css);
+
+html{
+   font-size: 62.5%;
+}
+
+body{
+   display: grid;
+   grid-template-areas: "header header header header" 
+                        "intro intro intro intro"
+                        "services services services services" 
+                        "productive productive productive productive"
+                        "get-access get-access get-access get-access"  
+                        "footer footer footer footer";
+   grid-template-columns: repeat(4, 1fr); 
+   background-color: hsl(218, 28%, 13%); 
+   color: var(--text-color);
+   font-family: var(--primary-font);
+}
+
+.intro{
+   grid-area: intro;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;  
+   background: hsl(217, 28%, 15%) url(../images/bg-curvy-desktop.svg) no-repeat center bottom;
+   background-size: contain;
+}
+
+.intro .info{
+  max-width: 600px;
+} 
+
+.intro .info h1{
+   font-size: 3rem;
+   line-height: 40px;
+   margin-bottom: 30px;
+}
+
+.services{
+   grid-area: services;
+   display: grid;
+   justify-items: center;
+   align-items: center;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 80px;
+   margin-top: 10rem; 
+}
+
+.services .service{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 400px;
+   text-align: center;
+}
+
+.productive{
+   grid-area: productive;
+   margin-top: 10rem;
+   position: relative;
+}
+
+.productive .container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 50px;
+}
+
+.productive .container .text{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   position: relative;
+}
+
+.productive .container .text a{
+   color: hsl(176, 68%, 64%);
+   border-bottom: 1px solid;
+   padding-bottom: 5px;
+   width: 160px;
+   position: relative;
+}
+
+.productive .container .text a::after{
+   content: url(../images/icon-arrow.svg);
+   position: absolute;
+   top: 1px;
+   right: 0;
+}
+
+.productive .comments{
+   display: flex;
+   gap: 40px;
+   margin: 50px 30px 100px;
+}
+
+.productive .comments::before{
+   content:  url(../images/bg-quotes.png);
+   position: absolute;
+   left: 20px;
+   bottom: 305px;
+}
+
+.productive .comments .comment{
+   background-color: hsl(217, 28%, 15%);
+   padding: 30px;
+   position: relative;
+}
+
+.productive .comments .comment img{
+   width: 40px;
+   border-radius: 50%;
+   position: absolute;
+   top: 150px;
+}
+
+.productive .comments .comment span{
+   margin-left: 50px;
+}
+
+.get-access{
+   grid-area: get-access;
+   background-color: hsl(219, 30%, 18%);
+   max-width: 700px;
+   text-align: center;
+   padding: 40px;
+   transform: translate(60%, 40%);
+   z-index: 1;
+}
+
+.get-access .form input{
+   width: 400px;
+   height: 45px;
+   border-radius: 50px;
+   border: none;
+   padding: 15px;
+   margin-right: 10px;
+}
