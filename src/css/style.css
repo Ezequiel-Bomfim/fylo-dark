@@ -1,60 +1,137 @@
 @import url(../css/reset.css);
 @import url(../css/variables.css);
-@import url(../css/typography.css);
 @import url(../css/components.css);
 @import url(../css/header.css);
 @import url(../css/footer.css);
 @import url(../css/animations.css);
+@import url(../css/responsive.css);
 
-html{
+html {
    font-size: 62.5%;
 }
 
-body{
+body {
    display: grid;
-   grid-template-areas: "header header header header" 
+   grid-template-areas: "header header header header"
                         "intro intro intro intro"
-                        "services services services services" 
+                        "services services services services"
                         "productive productive productive productive"
-                        "get-access get-access get-access get-access"  
+                        "get-access get-access get-access get-access"
                         "footer footer footer footer";
-   grid-template-columns: repeat(4, 1fr); 
-   background-color: hsl(218, 28%, 13%); 
+   grid-template-columns: repeat(4, 1fr);
+   background-color: hsl(218, 28%, 13%);
    color: var(--text-color);
    font-family: var(--primary-font);
 }
 
-.intro{
+.header {
+   grid-area: header;
+   background-color: hsl(217, 28%, 15%);
+}
+
+.header nav {
+   display: flex;
+   justify-content: space-between;
+   padding: 5rem;
+   margin: 0 2rem;
+}
+
+.header nav ul {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 30px;
+}
+
+.header nav ul li a {
+   font-size: var(--primary-font-size);
+   color: var(--text-color);
+}
+
+.header nav ul li a,
+.productive .container .text a:hover,
+.footer .footer-links ul li a,
+.footer .social-media a {
+    transition: var(--transition-default);
+}
+
+.header nav ul li a:hover {
+   text-decoration: underline;
+}
+
+.header nav ul li a:hover,
+.footer .footer-links ul li a:hover {
+    font-weight: 700;
+}
+
+.intro {
    grid-area: intro;
    display: flex;
    flex-direction: column;
    align-items: center;
-   text-align: center;  
+   text-align: center;
    background: hsl(217, 28%, 15%) url(../images/bg-curvy-desktop.svg) no-repeat center bottom;
    background-size: contain;
 }
 
-.intro .info{
-  max-width: 600px;
-} 
+.intro .info {
+   margin-top: 20px;
+   max-width: 600px;
+}
 
-.intro .info h1{
+.intro .info h1 {
    font-size: 3rem;
    line-height: 40px;
    margin-bottom: 30px;
 }
 
-.services{
+.intro .info p {
+   line-height: 30px;
+   margin-bottom: 20px;
+}
+
+.intro .info p,
+.services .service h3,
+.productive .comments .comment p,
+.get-access .form h2 {
+   font-size: var(--primary-font-size);
+}
+
+.intro .info button, 
+.get-access .form button{
+   width: 200px;
+   height: 40px;
+   border-radius: 50px;
+   border: none;
+
+   background-color: var(--primary-color);
+   color: var(--text-color);
+   font-family: var(--primary-font);
+   cursor: pointer;
+   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.intro .info button:hover,
+.get-access .form button:hover {
+    transition: var(--transition-default);
+}
+
+.intro .info button:hover,
+.get-access .form button:hover {
+    background-color: #90e0f8;
+}
+
+.services {
    grid-area: services;
    display: grid;
    justify-items: center;
    align-items: center;
    grid-template-columns: repeat(2, 1fr);
-   grid-gap: 80px;
-   margin-top: 10rem; 
+   gap: 80px;
+   margin-top: 10rem;
 }
 
-.services .service{
+.services .service {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -62,27 +139,52 @@ body{
    text-align: center;
 }
 
-.productive{
+.services .service h3 {
+   margin-top: 2rem;
+}
+
+.services .service p {
+   margin-top: 1rem;
+   line-height: 20px;
+}
+
+.services .service p,
+.productive .container .text p,
+.get-access .form p {
+   font-size: var(--secundary-font-size);
+}
+
+.productive {
    grid-area: productive;
-   margin-top: 10rem;
+   margin: 20rem 0;
    position: relative;
 }
 
-.productive .container{
+.productive .container {
    display: flex;
    align-items: center;
    justify-content: center;
    gap: 50px;
+   padding: 10px;
 }
 
-.productive .container .text{
+.productive .container .text {
    display: flex;
    flex-direction: column;
    gap: 10px;
-   position: relative;
 }
 
-.productive .container .text a{
+.productive .container .text h2 {
+   font-size: 2.5rem;
+   line-height: 35px;
+   max-width: 300px;
+}
+
+.productive .container .text p {
+   max-width: 500px;
+}
+
+.productive .container .text a {
    color: hsl(176, 68%, 64%);
    border-bottom: 1px solid;
    padding-bottom: 5px;
@@ -90,58 +192,154 @@ body{
    position: relative;
 }
 
-.productive .container .text a::after{
+
+.productive .container .text a,
+.productive .comments .comment h4,
+.footer .social-media a i {
+   font-size: var(--secundary-font-size);
+}
+
+.productive .container .text a:hover {
+   color: var(--text-color);
+}
+
+.productive .container .text a::after {
    content: url(../images/icon-arrow.svg);
    position: absolute;
    top: 1px;
    right: 0;
 }
 
-.productive .comments{
+.productive .comments {
    display: flex;
    gap: 40px;
-   margin: 50px 30px 100px;
+   margin: 50px 50px;
 }
 
-.productive .comments::before{
-   content:  url(../images/bg-quotes.png);
+.productive .comments::before {
+   content: url(../images/bg-quotes.png);
    position: absolute;
-   left: 20px;
-   bottom: 305px;
+   left: 40px;
+   bottom: 250px;
+   z-index: -1;
 }
 
-.productive .comments .comment{
+.productive .comments .comment {
    background-color: hsl(217, 28%, 15%);
    padding: 30px;
-   position: relative;
 }
 
-.productive .comments .comment img{
+.productive .comments .comment img {
    width: 40px;
    border-radius: 50%;
-   position: absolute;
-   top: 150px;
 }
 
-.productive .comments .comment span{
-   margin-left: 50px;
+.productive .comments .comment .user-profile {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-top: 15px;
 }
 
-.get-access{
+.get-access {
    grid-area: get-access;
-   background-color: hsl(219, 30%, 18%);
-   max-width: 700px;
+   position: relative;
    text-align: center;
-   padding: 40px;
-   transform: translate(60%, 40%);
+   padding: 40px 0;
    z-index: 1;
 }
 
-.get-access .form input{
+.get-access div {
+   background-color: hsl(219, 30%, 18%);
+   max-width: 700px;
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 30px;
+}
+
+.get-access .form p {
+   margin: 30px 0;
+}
+
+.get-access div .form input {
    width: 400px;
    height: 45px;
    border-radius: 50px;
    border: none;
    padding: 15px;
    margin-right: 10px;
+   outline: none;
+}
+
+.get-access div .form input.valido{
+   border: 2px solid green;
+}
+
+.get-access div .form input.invalido{
+   border: 2px solid red;
+}
+
+.footer {
+   grid-area: footer;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+   
+   padding: 10px;
+   position: relative;
+   background-color: hsl(216, 53%, 9%);
+   font-size: var(--secundary-font-size);
+   min-height: 500px;
+}
+
+.footer .img{
+   position: absolute;
+   top: 120px;
+   left: 50px;
+}
+
+.footer .location {
+   display: flex;
+   align-items: flex-start;
+   gap: 20px;
+   max-width: 330px;
+   line-height: 22px;
+}
+
+.footer .contacts div{
+   display: flex;
+   align-items: flex-start;
+   gap: 20px;
+}
+
+.footer .contacts span {
+   margin-bottom: 20px;
+}
+
+.footer .footer-links ul {
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+   gap: 20px 70px;
+}
+
+.footer .social-media {
+   display: flex;
+   gap: 20px;
+}
+
+.footer .social-media a {
+   width: 30px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid #fff;
+   border-radius: 50%;
+}
+
+.footer .social-media a:hover {
+   color: var(--primary-color);
+   border-color: var(--primary-color);
 }

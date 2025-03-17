@@ -1,0 +1,156 @@
+@media (max-width: 1476px) {
+    .productive .comments::before {
+        top: 500px;
+    }
+}
+
+@media (max-width: 1344px) {
+    .get-access div button {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 880px) {
+    .header nav {
+        padding: 5rem 2rem;
+        margin: 0;
+    }
+
+    .header nav img {
+        max-width: 100px;
+    }
+
+    .header nav ul {
+        gap: 10px;
+    }
+
+    .header nav ul li a {
+        font-size: var(--secundary-font-size);
+    }
+
+    .intro .info {
+        padding: 10px;
+    }
+
+    .intro .info h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro .info p {
+        font-size: var(--secundary-font-size);
+        line-height: 25px;
+        padding: 10px;
+    }
+
+    .services {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .services .service p {
+        max-width: 300px;
+    }
+
+    .productive .container img {
+        max-width: 300px;
+    }
+
+    .productive .container .text {
+        padding: 5px;
+    }
+
+    .productive .container .text h2 {
+        font-size: var(--primary-font-size);
+        max-width: none;
+    }
+
+    .productive .comments {
+        flex-direction: column;
+    }
+
+    .productive .comments::before {
+        top: 260px;
+    }
+
+    .get-access div {
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+        width: 300px;
+    }
+
+    .get-access div .form input {
+        margin: 0 0 15px;
+        width: 200px;
+    }
+}
+
+@media (max-width: 856px) {
+    .footer {
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 704px) {
+    .productive .comments::before {
+        top: 270px;
+    }
+}
+
+@media (max-width: 727px) {
+    .intro img {
+        width: 400px;
+    }
+
+    .footer .img {
+        left: 30px;
+        top: 50px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 684px) {
+    .productive .comments::before {
+        top: 290px;
+    }
+}
+
+@media (max-width: 660px) {
+    .productive .comments::before {
+        top: 330px;
+    }
+}
+
+@media (max-width: 570px) {
+    .footer {
+        min-height: 700px;
+        align-content: center;
+        gap: 10px;
+    }
+
+    .footer .img {
+        top: 200px;
+    }
+}
+
+@media (max-width: 544px) {
+    .productive .comments::before {
+        top: 410px;
+    }
+}
+
+@media (max-width: 525px) {
+    .footer .img {
+        top: 140px;
+    }
+}
+
+@media (max-width: 360px) {
+    .intro {
+        background: hsl(217, 28%, 15%) url(../images/bg-curvy-mobile.svg) no-repeat center bottom;
+    }
+
+    .footer .location,
+    .footer .social-media {
+        align-self: center;
+    }
+}
